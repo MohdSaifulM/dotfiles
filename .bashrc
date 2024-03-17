@@ -119,6 +119,7 @@ if ! shopt -oq posix; then
 fi
 
 export PATH="$PATH:~/bin"
+export TMUX_CONFIG=~/.config/tmux/tmux.conf
 
 eval "$(oh-my-posh init bash --config ~/bin/themes/emodipt-extend.omp.json)"
 
