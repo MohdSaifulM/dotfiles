@@ -93,6 +93,7 @@ alias la='ls -A'
 alias l='ls -CF'
 
 alias gcz='git-cz'
+alias trg='cd ~/work/tradingroom/'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
@@ -121,7 +122,7 @@ fi
 export PATH="$PATH:~/bin"
 export TMUX_CONFIG=~/.config/tmux/tmux.conf
 
-eval "$(oh-my-posh init bash --config ~/bin/themes/emodipt-extend.omp.json)"
+eval "$(oh-my-posh init bash --config ~/themes/emodipt-extend.omp.json)"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
