@@ -398,6 +398,8 @@ commands = {} -- Add a custom command or override a global one using the same fu
 
 use("tpope/vim-fugitive")
 
+use("tpope/vim-surround")
+
 use("airblade/vim-gitgutter")
 
 use("digitaltoad/vim-pug")
