@@ -418,6 +418,13 @@ use('mbbill/undotree')
 
 use('christoomey/vim-tmux-navigator')
 
+use({
+    "andrewferrier/debugprint.nvim",
+    config = function()
+        require("debugprint").setup(opts)
+    end,
+})
+
 use {'kevinhwang91/nvim-ufo',
 requires = 'kevinhwang91/promise-async',
 config = function()
