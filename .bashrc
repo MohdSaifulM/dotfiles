@@ -94,6 +94,7 @@ alias l='ls -CF'
 
 alias gcz='git-cz'
 alias trg='cd ~/work/tradingroom/'
+alias lg='lazygit'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
