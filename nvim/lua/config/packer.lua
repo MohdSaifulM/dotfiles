@@ -60,10 +60,7 @@ return require('packer').startup(function(use)
 			require("copilot").setup({
 				suggestion = {
 					enabled = true,
-					auto_trigger= true,
-					keymap = {
-						accept = "<Tab>"
-					}
+					auto_trigger= true
 				}
 			})
 		end,
