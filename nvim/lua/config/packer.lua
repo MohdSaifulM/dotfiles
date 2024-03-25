@@ -418,7 +418,7 @@ use('christoomey/vim-tmux-navigator')
 use({
     "andrewferrier/debugprint.nvim",
     config = function()
-        require("debugprint").setup(opts)
+        require("debugprint").setup()
     end,
 })
 
