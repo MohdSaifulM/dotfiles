@@ -425,20 +425,31 @@ use({
 use {'kevinhwang91/nvim-ufo',
 requires = 'kevinhwang91/promise-async',
 config = function()
-	require('ufo').setup({
-		provider_selector = function(bufnr, filetype, buftype)
-			return {'treesitter', 'indent'}
-		end
-	})
+    require('ufo').setup({
+        provider_selector = function(bufnr, filetype, buftype)
+            return {'treesitter', 'indent'}
+        end
+    })
 end
 }
 
-use{
+use {
 	'terrortylor/nvim-comment',
 	as = 'nvim-comment',
 	config = function()
 		require('nvim_comment').setup()
 	end
+}
+
+use {
+    "kdheepak/lazygit.nvim",
+    -- optional for floating window border decoration
+    dependencies = {
+        "nvim-lua/plenary.nvim",
+    },
+    config = function()
+        vim.keymap.set("n", "<leader>gg", "<cmd>LazyGit<cr>")
+    end,
 }
 
 end)
