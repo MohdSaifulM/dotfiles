@@ -94,6 +94,7 @@ alias l='ls -CF'
 
 alias gcz='git-cz'
 alias trg='cd ~/work/tradingroom/'
+alias trans='cd ~/work/tradingroom/app-frontend/translations'
 alias lg='lazygit'
 alias mgb='cd "/mnt/c/Program Files/MongoDB/Tools/100/bin"'
 
