@@ -437,7 +437,15 @@ return require('packer').startup(function(use)
                 'terrortylor/nvim-comment',
                 as = 'nvim-comment',
                 config = function()
-                    require('nvim_comment').setup()
+                    require('nvim_comment').setup({
+                        -- Use custom hook for JSX/TSX files
+                        hook = function()
+                            -- Custom comment string for JSX/TSX
+                            if vim.api.nvim_buf_get_option(0, 'filetype') == 'javascriptreact' or vim.api.nvim_buf_get_option(0, 'filetype') == 'typescriptreact' then
+                                vim.api.nvim_buf_set_option(0, 'commentstring', '{/* %s */}')
+                            end
+                        end
+                    })
                 end
             }
 
