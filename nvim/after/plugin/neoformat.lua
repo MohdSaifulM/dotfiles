@@ -18,4 +18,13 @@ vim.g.neoformat_basic_format_trim = 1
 
 
 vim.g.neoformat_enabled = true
+-- Key mapping for manual formatting
 vim.api.nvim_set_keymap('n', '<leader>=', ':Neoformat<CR>', { noremap = true, silent = true })
+
+-- Autocommand to run Neoformat on save for specific file types
+vim.cmd([[
+  augroup fmt
+    autocmd!
+    autocmd BufWritePre *.js,*.jsx,*.ts,*.tsx,*.css,*.scss,*.md Neoformat
+  augroup END
+]])
