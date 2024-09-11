@@ -1,0 +1,16 @@
+[env]
+TERM = "xterm-256color"
+
+[window]
+opacity = 0.8
+blur = true
+decorations = "Buttonless" # "Full"
+decorations_theme_variant = "Dark" # "Dark"
+
+[font]
+normal.family = "CaskaydiaCove Nerd Font"
+bold.family = "CaskaydiaCove Nerd Font"
+italic.family = "CaskaydiaCove Nerd Font"
+bold_italic.family = "CaskaydiaCove Nerd Font"
+
+size = 10.0
