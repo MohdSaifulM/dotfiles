@@ -5,7 +5,47 @@ vim.cmd [[packadd packer.nvim]]
 
 return require('packer').startup(function(use)
     -- Packer can manage itself
-    use 'wbthomason/packer.nvim'
+    use('wbthomason/packer.nvim')
+
+    use('tpope/vim-fugitive')
+
+    use('tpope/vim-surround')
+
+    use('airblade/vim-gitgutter')
+
+    use('digitaltoad/vim-pug')
+
+    use('wakatime/vim-wakatime')
+
+    use('theprimeagen/harpoon')
+
+    use('ThePrimeagen/vim-be-good')
+
+    use('nvim-tree/nvim-web-devicons')
+
+    use('sbdchd/neoformat')
+
+    use('mbbill/undotree')
+
+    use('christoomey/vim-tmux-navigator')
+
+    use('catppuccin/nvim')
+
+    use('folke/tokyonight.nvim')
+
+    use('rebelot/kanagawa.nvim')
+
+    use('rose-pine/neovim')
+
+    use('navarasu/onedark.nvim')
+
+    use('projekt0n/github-nvim-theme')
+
+    use('Mofiqul/vscode.nvim')
+
+    use('shaunsingh/nord.nvim')
+
+    -- use('Exafunction/codeium.vim')
 
     use {
         'nvim-telescope/telescope.nvim', tag = '0.1.5',
@@ -13,13 +53,13 @@ return require('packer').startup(function(use)
         requires = { {'nvim-lua/plenary.nvim'} }
     }
 
-    use({
+    use {
         'joshdick/onedark.vim',
         as = 'onedark',
         config = function()
             vim.cmd('colorscheme onedark')
         end
-    })
+    }
 
     use {
         'nvim-treesitter/nvim-treesitter',
@@ -53,7 +93,7 @@ return require('packer').startup(function(use)
     }
 
     use {
-        "zbirenbaum/copilot.lua",
+        'zbirenbaum/copilot.lua',
         cmd = "Copilot",
         event = "InsertEnter",
         config = function()
@@ -65,9 +105,6 @@ return require('packer').startup(function(use)
             })
         end,
     }
-
-    -- use('Exafunction/codeium.vim')
-
 
     use {
         'nvim-lualine/lualine.nvim',
@@ -82,7 +119,7 @@ return require('packer').startup(function(use)
     }
 
     use {
-        "nvim-neo-tree/neo-tree.nvim",
+        'nvim-neo-tree/neo-tree.nvim',
         branch = "v3.x",
         requires = {
             "nvim-lua/plenary.nvim",
@@ -393,78 +430,57 @@ return require('packer').startup(function(use)
                     end
                 }
 
-                use("tpope/vim-fugitive")
-
-                use("tpope/vim-surround")
-
-                use("airblade/vim-gitgutter")
-
-                use("digitaltoad/vim-pug")
-
-                use('wakatime/vim-wakatime')
-
-                use("theprimeagen/harpoon")
-
-                use("ThePrimeagen/vim-be-good")
-
-                use('nvim-tree/nvim-web-devicons')
-
-                use('sbdchd/neoformat')
-
-                use('mbbill/undotree')
-
-                use('christoomey/vim-tmux-navigator')
-
-                use({
-                    "andrewferrier/debugprint.nvim",
-                    config = function()
-                        require("debugprint").setup()
-                    end,
-                })
-
-                use {'kevinhwang91/nvim-ufo',
-                requires = 'kevinhwang91/promise-async',
-                config = function()
-                    require('ufo').setup({
-                        provider_selector = function(bufnr, filetype, buftype)
-                            return {'treesitter', 'indent'}
-                        end
-                    })
+    use {
+        'terrortylor/nvim-comment',
+        as = 'nvim-comment',
+        config = function()
+            require('nvim_comment').setup({
+                -- Use custom hook for JSX/TSX files
+                hook = function()
+                    -- Custom comment string for JSX/TSX
+                    if vim.api.nvim_buf_get_option(0, 'filetype') == 'javascriptreact' or vim.api.nvim_buf_get_option(0, 'filetype') == 'typescriptreact' then
+                        vim.api.nvim_buf_set_option(0, 'commentstring', '{/* %s */}')
+                    end
                 end
-            }
+            })
+        end
+    }
 
-            use {
-                'terrortylor/nvim-comment',
-                as = 'nvim-comment',
-                config = function()
-                    require('nvim_comment').setup({
-                        -- Use custom hook for JSX/TSX files
-                        hook = function()
-                            -- Custom comment string for JSX/TSX
-                            if vim.api.nvim_buf_get_option(0, 'filetype') == 'javascriptreact' or vim.api.nvim_buf_get_option(0, 'filetype') == 'typescriptreact' then
-                                vim.api.nvim_buf_set_option(0, 'commentstring', '{/* %s */}')
-                            end
-                        end
-                    })
+    use {
+        'kdheepak/lazygit.nvim',
+        -- optional for floating window border decoration
+        dependencies = {
+            "nvim-lua/plenary.nvim",
+        },
+        config = function()
+            vim.keymap.set("n", "<leader>gg", "<cmd>LazyGit<cr>")
+        end,
+    }
+
+    use {
+        'olrtg/nvim-emmet',
+        config = function()
+            vim.keymap.set({ "n", "v" }, '<leader>xe', require('nvim-emmet').wrap_with_abbreviation)
+        end,
+    }
+
+    use {
+        'andrewferrier/debugprint.nvim',
+        config = function()
+            require("debugprint").setup()
+        end,
+    }
+
+    use {
+        'kevinhwang91/nvim-ufo',
+        requires = 'kevinhwang91/promise-async',
+        config = function()
+            require('ufo').setup({
+                provider_selector = function(bufnr, filetype, buftype)
+                    return {'treesitter', 'indent'}
                 end
-            }
+            })
+        end
+    }
 
-            use {
-                "kdheepak/lazygit.nvim",
-                -- optional for floating window border decoration
-                dependencies = {
-                    "nvim-lua/plenary.nvim",
-                },
-                config = function()
-                    vim.keymap.set("n", "<leader>gg", "<cmd>LazyGit<cr>")
-                end,
-            }
-
-            use {
-                "olrtg/nvim-emmet",
-                config = function()
-                    vim.keymap.set({ "n", "v" }, '<leader>xe', require('nvim-emmet').wrap_with_abbreviation)
-                end,
-            }
-
-        end)
+end)
