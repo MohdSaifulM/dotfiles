@@ -54,14 +54,6 @@ return require('packer').startup(function(use)
     }
 
     use {
-        'joshdick/onedark.vim',
-        as = 'onedark',
-        config = function()
-            vim.cmd('colorscheme onedark')
-        end
-    }
-
-    use {
         'nvim-treesitter/nvim-treesitter',
         run = function()
             local ts_update = require('nvim-treesitter.install').update({ with_sync = true })
@@ -112,7 +104,7 @@ return require('packer').startup(function(use)
         config = function()
             require('lualine').setup({
                 options = {
-                    theme = 'onedark'
+                    theme = 'auto'
                 }
             })
         end

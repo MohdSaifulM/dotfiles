@@ -18,3 +18,11 @@ vim.o.foldenable = true
 
 vim.keymap.set('n', 'zR', require('ufo').openAllFolds)
 vim.keymap.set('n', 'zM', require('ufo').closeAllFolds)
+
+vim.g.colorscheme = 'vscode'
+
+-- Set the colorscheme
+local status, _ = pcall(vim.cmd, 'colorscheme ' .. vim.g.colorscheme)
+if not status then
+    print('Error: colorscheme not found')
+end
