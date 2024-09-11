@@ -122,7 +122,7 @@ if ! shopt -oq posix; then
   fi
 fi
 
-export PATH="$PATH:~/bin"
+export PATH="$PATH:~/.local/bin"
 export TMUX_CONFIG=~/.config/tmux/tmux.conf
 
 eval "$(oh-my-posh init bash --config ~/themes/emodipt-extend.omp.json)"
@@ -133,3 +133,5 @@ export NVM_DIR="$HOME/.nvm"
 
 # set neovim
 set -o vi
+. "$HOME/.cargo/env"
+source /home/saif/alacritty/extra/completions/alacritty.bash
