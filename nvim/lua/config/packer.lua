@@ -45,6 +45,10 @@ return require('packer').startup(function(use)
 
     use('shaunsingh/nord.nvim')
 
+    use('tpope/vim-sleuth')
+
+    use('tpope/vim-commentary')
+
     -- use('Exafunction/codeium.vim')
 
     use {
