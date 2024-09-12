@@ -31,5 +31,5 @@ end, {
 })
 
 vim.keymap.set("n", "<Leader>dd", function()
-    return require('debugprint').deleteprints()
+	return require('debugprint').deleteprints()
 end)
