@@ -19,7 +19,7 @@ vim.o.foldenable = true
 vim.keymap.set('n', 'zR', require('ufo').openAllFolds)
 vim.keymap.set('n', 'zM', require('ufo').closeAllFolds)
 
-vim.g.colorscheme = 'vscode'
+vim.g.colorscheme = 'github_dark_dimmed'
 
 -- Set the colorscheme
 local status, _ = pcall(vim.cmd, 'colorscheme ' .. vim.g.colorscheme)

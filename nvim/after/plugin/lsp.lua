@@ -1,4 +1,5 @@
 local lsp_zero = require('lsp-zero')
+local lsp_config = require('lspconfig')
 
 lsp_zero.on_attach(function(client, bufnr)
   local opts = {buffer = bufnr, remap = false}
@@ -51,4 +52,16 @@ cmp.setup({
     ['<Enter>'] = cmp.mapping.confirm({ select = true }),
     ['<C-Space>'] = cmp.mapping.complete(),
   }),
+})
+
+lsp_config["dartls"].setup({
+  on_attach = on_attach,
+  settings = {
+    dart = {
+      analysisExcludedFolders = {
+        vim.fn.expand("$HOME/.pub-cache"),
+        vim.fn.expand("$HOME/tools/flutter/"),
+      },
+    },
+  },
 })
