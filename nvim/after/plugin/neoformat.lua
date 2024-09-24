@@ -25,6 +25,6 @@ vim.api.nvim_set_keymap('n', '<leader>=', ':Neoformat<CR>', { noremap = true, si
 vim.cmd([[
   augroup fmt
     autocmd!
-    autocmd BufWritePre *.js,*.jsx,*.ts,*.tsx,*.css,*.scss,*.md Neoformat
+    autocmd BufWritePre *.js,*.jsx,*.ts,*.tsx,*.css,*.scss,*.md,*.dart Neoformat
   augroup END
 ]])

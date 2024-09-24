@@ -94,9 +94,15 @@ alias l='ls -CF'
 
 alias gcz='git-cz'
 alias trg='cd ~/work/tradingroom/'
+alias proj='cd ~/projects'
 alias trans='cd ~/work/tradingroom/app-frontend/translations'
 alias lg='lazygit'
 alias mgb='cd "/mnt/c/Program Files/MongoDB/Tools/100/bin"'
+
+alias flutter-emu='flutter emulators --launch Pixel_8_Pro_API_35'
+
+# Start genesiv work session
+alias start-genesiv='~/dotfiles/scripts/start-genesiv.sh'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
