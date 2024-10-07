@@ -139,7 +139,7 @@ export NVM_DIR="$HOME/.nvm"
 
 # set neovim
 set -o vi
-. "$HOME/.cargo/env"
-source /home/saif/alacritty/extra/completions/alacritty.bash
+# . "$HOME/.cargo/env"
+# source /home/saif/alacritty/extra/completions/alacritty.bash
 
 export CHROME_EXECUTABLE=/usr/bin/chromium-browser

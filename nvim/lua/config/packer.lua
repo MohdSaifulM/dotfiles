@@ -7,6 +7,8 @@ return require('packer').startup(function(use)
     -- Packer can manage itself
     use('wbthomason/packer.nvim')
 
+    use('APZelos/blamer.nvim')
+
     use('tpope/vim-fugitive')
 
     use('tpope/vim-surround')
