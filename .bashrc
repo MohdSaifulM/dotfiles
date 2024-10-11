@@ -103,6 +103,7 @@ alias flutter-emu='flutter emulators --launch Pixel_8_Pro_API_35'
 
 # Start genesiv work session
 alias start-genesiv='~/dotfiles/scripts/start-genesiv.sh'
+alias start-genesiv-v2='~/dotfiles/scripts/start-genesiv-v2.sh'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
