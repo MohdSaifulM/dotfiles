@@ -51,6 +51,8 @@ return require('packer').startup(function(use)
 
     use('tpope/vim-commentary')
 
+    use('xiyaowong/transparent.nvim')
+
     -- use('Exafunction/codeium.vim')
 
     use {
