@@ -1,5 +1,6 @@
 return {
     { "windwp/nvim-ts-autotag" },
+    { 'wakatime/vim-wakatime', lazy = false },
     {
         "windwp/nvim-autopairs",
         event = "InsertEnter",
