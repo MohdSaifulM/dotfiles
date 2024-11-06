@@ -143,4 +143,6 @@ set -o vi
 # . "$HOME/.cargo/env"
 # source /home/saif/alacritty/extra/completions/alacritty.bash
 
+figlet -c -f 'Poison.flf' "SaifXO" | lolcat
+
 export CHROME_EXECUTABLE=/usr/bin/chromium-browser

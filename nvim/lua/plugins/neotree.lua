@@ -1,165 +1,44 @@
--- This file can be loaded by calling `lua require('plugins')` from your init.vim
-
--- Only required if you have packer configured as `opt`
-vim.cmd [[packadd packer.nvim]]
-
-return require('packer').startup(function(use)
-    -- Packer can manage itself
-    use('wbthomason/packer.nvim')
-
-    use('APZelos/blamer.nvim')
-
-    use('tpope/vim-fugitive')
-
-    use('tpope/vim-surround')
-
-    use('airblade/vim-gitgutter')
-
-    use('digitaltoad/vim-pug')
-
-    use('wakatime/vim-wakatime')
-
-    use('theprimeagen/harpoon')
-
-    use('ThePrimeagen/vim-be-good')
-
-    use('nvim-tree/nvim-web-devicons')
-
-    use('sbdchd/neoformat')
-
-    use('mbbill/undotree')
-
-    use('christoomey/vim-tmux-navigator')
-
-    use('catppuccin/nvim')
-
-    use('folke/tokyonight.nvim')
-
-    use('rebelot/kanagawa.nvim')
-
-    use('rose-pine/neovim')
-
-    use('navarasu/onedark.nvim')
-
-    use('projekt0n/github-nvim-theme')
-
-    use('Mofiqul/vscode.nvim')
-
-    use('shaunsingh/nord.nvim')
-
-    use('tpope/vim-sleuth')
-
-    use('tpope/vim-commentary')
-
-    use('tpope/vim-abolish')
-
-    use('xiyaowong/transparent.nvim')
-
-    -- use('Exafunction/codeium.vim')
-
-    use {
-        'nvim-telescope/telescope.nvim', tag = '0.1.5',
-        -- or                            , branch = '0.1.x',
-        requires = { {'nvim-lua/plenary.nvim'} }
-    }
-
-    use {
-        'nvim-treesitter/nvim-treesitter',
-        run = function()
-            local ts_update = require('nvim-treesitter.install').update({ with_sync = true })
-            ts_update()
-        end
-    }
-
-    use {
-        'VonHeikemen/lsp-zero.nvim',
-        branch = 'v3.x',
-        requires = {
-            -- LSP Support
-            {'neovim/nvim-lspconfig'},
-            {'williamboman/mason.nvim'},
-            {'williamboman/mason-lspconfig.nvim'},
-
-            -- Autocompletion
-            {'hrsh7th/nvim-cmp'},
-            {'hrsh7th/cmp-buffer'},
-            {'hrsh7th/cmp-path'},
-            {'saadparwaiz1/cmp_luasnip'},
-            {'hrsh7th/cmp-nvim-lsp'},
-            {'hrsh7th/cmp-nvim-lua'},
-
-            -- Snippets
-            {'L3MON4D3/LuaSnip'},
-            {'rafamadriz/friendly-snippets'},
-        }
-    }
-
-    use {
-        'zbirenbaum/copilot.lua',
-        cmd = "Copilot",
-        event = "InsertEnter",
+return {
+    "nvim-neo-tree/neo-tree.nvim",
+    branch = "v3.x",
+    dependencies = {
+        "nvim-lua/plenary.nvim",
+        "nvim-tree/nvim-web-devicons",
+        "MunifTanjim/nui.nvim",
+        -- "3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
+        -- {
+        "s1n7ax/nvim-window-picker",
+        version = "2.*",
         config = function()
-            require("copilot").setup({
-                suggestion = {
-                    enabled = true,
-                    auto_trigger= true
-                }
+            require("window-picker").setup({
+                filter_rules = {
+                    include_current_win = false,
+                    autoselect_one = true,
+                    -- filter using buffer options
+                    bo = {
+                        -- if the file type is one of following, the window will be ignored
+                        filetype = { "neo-tree", "neo-tree-popup", "notify" },
+                        -- if the buffer type is one of following, the window will be ignored
+                        buftype = { "terminal", "quickfix" },
+                    },
+                },
             })
         end,
-    }
+    },
 
-    use {
-        'nvim-lualine/lualine.nvim',
-        requires = { 'nvim-tree/nvim-web-devicons', opt = true },
-        config = function()
-            require('lualine').setup({
-                options = {
-                    theme = 'auto'
-                }
-            })
-        end
-    }
+    config = function()
+        -- If you want icons for diagnostic errors, you'll need to define them somewhere:
+        vim.fn.sign_define("DiagnosticSignError",
+        {text = " ", texthl = "DiagnosticSignError"})
+        vim.fn.sign_define("DiagnosticSignWarn",
+        {text = " ", texthl = "DiagnosticSignWarn"})
+        vim.fn.sign_define("DiagnosticSignInfo",
+        {text = " ", texthl = "DiagnosticSignInfo"})
+        vim.fn.sign_define("DiagnosticSignHint",
+        {text = "󰌵", texthl = "DiagnosticSignHint"})
 
-    use {
-        'nvim-neo-tree/neo-tree.nvim',
-        branch = "v3.x",
-        requires = {
-            "nvim-lua/plenary.nvim",
-            "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
-            "MunifTanjim/nui.nvim",
-            -- "3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
-            {
-                's1n7ax/nvim-window-picker',
-                version = '2.*',
-                config = function()
-                    require 'window-picker'.setup({
-                        filter_rules = {
-                            include_current_win = false,
-                            autoselect_one = true,
-                            -- filter using buffer options
-                            bo = {
-                                -- if the file type is one of following, the window will be ignored
-                                filetype = { 'neo-tree', "neo-tree-popup", "notify" },
-                                -- if the buffer type is one of following, the window will be ignored
-                                buftype = { 'terminal', "quickfix" },
-                            },
-                        },
-                    })
-                end,
-            },
-        },
-        config = function ()
-            -- If you want icons for diagnostic errors, you'll need to define them somewhere:
-            vim.fn.sign_define("DiagnosticSignError",
-            {text = " ", texthl = "DiagnosticSignError"})
-            vim.fn.sign_define("DiagnosticSignWarn",
-            {text = " ", texthl = "DiagnosticSignWarn"})
-            vim.fn.sign_define("DiagnosticSignInfo",
-            {text = " ", texthl = "DiagnosticSignInfo"})
-            vim.fn.sign_define("DiagnosticSignHint",
-            {text = "󰌵", texthl = "DiagnosticSignHint"})
-
-            require("neo-tree").setup({
+        local config = require("neo-tree")
+        config.setup({
                 close_if_last_window = false, -- Close Neo-tree if it is the last window left in the tab
                 popup_border_style = "rounded",
                 enable_git_status = true,
@@ -316,8 +195,8 @@ return require('packer').startup(function(use)
                             filesystem = {
                                 filtered_items = {
                                     visible = false, -- when true, they will just be displayed differently than normal items
-                                    hide_dotfiles = true,
-                                    hide_gitignored = true,
+                                    hide_dotfiles = false,
+                                    hide_gitignored = false,
                                     hide_hidden = true, -- only works on Windows for hidden files/directories
                                     hide_by_name = {
                                         --"node_modules"
@@ -427,62 +306,15 @@ return require('packer').startup(function(use)
                                 }
                             }
                         })
+        vim.keymap.set("n", "<C-B>", function()
+            require("neo-tree.command").execute { source = "filesystem", toggle = true, position = "right" }
+        end)
 
-                        vim.cmd([[nnoremap \ :Neotree reveal<cr>]])
-                    end
-                }
+        vim.keymap.set("n", "<C-G>", function()
+            require("neo-tree.command").execute { toggle = true, source = "git_status", position = "float" }
+        end)
 
-    use {
-        'terrortylor/nvim-comment',
-        as = 'nvim-comment',
-        config = function()
-            require('nvim_comment').setup({
-                -- Use custom hook for JSX/TSX files
-                hook = function()
-                    -- Custom comment string for JSX/TSX
-                    if vim.api.nvim_buf_get_option(0, 'filetype') == 'javascriptreact' or vim.api.nvim_buf_get_option(0, 'filetype') == 'typescriptreact' then
-                        vim.api.nvim_buf_set_option(0, 'commentstring', '{/* %s */}')
-                    end
-                end
-            })
-        end
-    }
+        vim.cmd([[nnoremap \ :Neotree reveal<cr>]])
 
-    use {
-        'kdheepak/lazygit.nvim',
-        -- optional for floating window border decoration
-        dependencies = {
-            "nvim-lua/plenary.nvim",
-        },
-        config = function()
-            vim.keymap.set("n", "<leader>gg", "<cmd>LazyGit<cr>")
-        end,
-    }
-
-    use {
-        'olrtg/nvim-emmet',
-        config = function()
-            vim.keymap.set({ "n", "v" }, '<leader>xe', require('nvim-emmet').wrap_with_abbreviation)
-        end,
-    }
-
-    use {
-        'andrewferrier/debugprint.nvim',
-        config = function()
-            require("debugprint").setup()
-        end,
-    }
-
-    use {
-        'kevinhwang91/nvim-ufo',
-        requires = 'kevinhwang91/promise-async',
-        config = function()
-            require('ufo').setup({
-                provider_selector = function(bufnr, filetype, buftype)
-                    return {'treesitter', 'indent'}
-                end
-            })
-        end
-    }
-
-end)
+    end,
+}
