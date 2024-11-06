@@ -36,11 +36,13 @@ return {
                 current_line_blame = false,
             })
 
-            vim.keymap.set("n", "<leader>gp", ":Gitsigns preview_hunk<CR>")
-            vim.keymap.set("n", "<leader>ga", ":Gitsigns stage_hunk<CR>")
-            vim.keymap.set("n", "<leader>gu", ":Gitsigns undo_stage_hunk<CR>")
-            vim.keymap.set("n", "<leader>gr", ":Gitsigns reset_hunk<CR>")
-            vim.keymap.set("n", "<leader>gb", ":Gitsigns blame_line<CR>")
+            vim.keymap.set("n", "<leader>hp", ":Gitsigns preview_hunk<CR>")
+            vim.keymap.set("n", "<leader>hs", ":Gitsigns stage_hunk<CR>")
+            vim.keymap.set("n", "<leader>hu", ":Gitsigns undo_stage_hunk<CR>")
+            vim.keymap.set("n", "<leader>hr", ":Gitsigns reset_hunk<CR>")
+            vim.keymap.set("n", "<leader>hb", ":Gitsigns blame_line<CR>")
+            vim.keymap.set("n", "]c", ":Gitsigns next_hunk<CR>")
+            vim.keymap.set("n", "[c", ":Gitsigns prev_hunk<CR>")
         end,
     },
 }

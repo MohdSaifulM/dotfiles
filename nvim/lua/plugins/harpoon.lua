@@ -13,7 +13,7 @@ return {
         vim.keymap.set("n", "<C-s>", "<cmd>lua require('harpoon.ui').nav_file(4)<CR>", { desc = "Go to harpoon 4" })
 
         for i = 1, 9 do
-          vim.keymap.set("n", "<leader>" .. i, "<cmd>lua require('harpoon.ui').nav_file(" .. i .. ")<CR>", { desc = "Go to harpoon " .. i .. "" })
+            vim.keymap.set("n", "<leader>" .. i, "<cmd>lua require('harpoon.ui').nav_file(" .. i .. ")<CR>", { desc = "Go to harpoon " .. i .. "" })
         end
     end
 }

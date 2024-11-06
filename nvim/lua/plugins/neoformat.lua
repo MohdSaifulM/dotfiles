@@ -31,6 +31,4 @@ return {
         augroup END
         ]])
     end,
-    lazy = true,
-
 }

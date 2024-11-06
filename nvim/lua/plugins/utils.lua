@@ -10,15 +10,15 @@ return {
         "mg979/vim-visual-multi",
         branch = "master",
     },
-    {
-        "Pocco81/auto-save.nvim",
-        config = function()
-            require("auto-save").setup({
-                -- your config goes here
-                -- or just leave it empty :)
-            })
-        end,
-    },
+    -- {
+    --     "Pocco81/auto-save.nvim",
+    --     config = function()
+    --         require("auto-save").setup({
+    -- your config goes here
+    -- or just leave it empty :)
+    --         })
+    --     end,
+    -- },
     {
         "numToStr/Comment.nvim",
         config = function()
@@ -87,60 +87,60 @@ return {
         end,
     },
     -- {
-        --   "m4xshen/hardtime.nvim",
-        --   dependencies = { "MunifTanjim/nui.nvim", "nvim-lua/plenary.nvim" },
-        --   event = "VeryLazy",
-        --   opts = {},
-        -- },
-        -- {
-            --   "tris203/precognition.nvim",
-            --   event = "VeryLazy",
-            --   config = {},
-            -- },
-            -- {
-                --     'edluffy/hologram.nvim',
-                --     config = function()
-                    --         require('hologram').setup({
-                        --             auto_disable = true,
-                        --         })
-                        --     end,
-                        -- }
+    --   "m4xshen/hardtime.nvim",
+    --   dependencies = { "MunifTanjim/nui.nvim", "nvim-lua/plenary.nvim" },
+    --   event = "VeryLazy",
+    --   opts = {},
+    -- },
+    -- {
+    --   "tris203/precognition.nvim",
+    --   event = "VeryLazy",
+    --   config = {},
+    -- },
+    -- {
+    --     'edluffy/hologram.nvim',
+    --     config = function()
+    --         require('hologram').setup({
+    --             auto_disable = true,
+    --         })
+    --     end,
+    -- }
 
-                        {
-                            "luckasRanarison/tailwind-tools.nvim",
-                            dependencies = { "nvim-treesitter/nvim-treesitter" },
-                            opts = {}, -- your configuration
-                        },
-                        {
-                            "iamcco/markdown-preview.nvim",
-                            cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
-                            build = "cd app && yarn install",
-                            init = function()
-                                vim.g.mkdp_filetypes = { "markdown" }
-                            end,
-                            ft = { "markdown" },
-                            keys = {
-                                {
-                                    "<leader>mp",
-                                    "<cmd>MarkdownPreview<cr>",
-                                },
-                            },
-                        },
-                        {
-                            "folke/which-key.nvim",
-                            event = "VeryLazy",
-                            opts = {
-                                plugins = { spelling = true },
-                                show_help = true,
-                            },
-                            keys = {
-                                {
-                                    "<leader>?",
-                                    function()
-                                        require("which-key").show({ global = false })
-                                    end,
-                                    desc = "Buffer Local Keymaps (which-key)",
-                                },
-                            },
-                        },
-                    }
+    {
+        "luckasRanarison/tailwind-tools.nvim",
+        dependencies = { "nvim-treesitter/nvim-treesitter" },
+        opts = {}, -- your configuration
+    },
+    {
+        "iamcco/markdown-preview.nvim",
+        cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
+        build = "cd app && yarn install",
+        init = function()
+            vim.g.mkdp_filetypes = { "markdown" }
+        end,
+        ft = { "markdown" },
+        keys = {
+            {
+                "<leader>mp",
+                "<cmd>MarkdownPreview<cr>",
+            },
+        },
+    },
+    {
+        "folke/which-key.nvim",
+        event = "VeryLazy",
+        opts = {
+            plugins = { spelling = true },
+            show_help = true,
+        },
+        keys = {
+            {
+                "<leader>?",
+                function()
+                    require("which-key").show({ global = false })
+                end,
+                desc = "Buffer Local Keymaps (which-key)",
+            },
+        },
+    },
+}

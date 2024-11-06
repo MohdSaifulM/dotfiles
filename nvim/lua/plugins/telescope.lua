@@ -36,5 +36,5 @@ return {
                 end
                 require('telescope.builtin').grep_string({ search = search_query })
             end)
-      end,
+        end,
     }, }

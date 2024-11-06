@@ -25,45 +25,45 @@ return {
     -- end
 
     -- {
-    -- 	"Exafunction/codeium.nvim",
-    -- 	dependencies = {
-    -- 		"nvim-lua/plenary.nvim",
-    -- 		"hrsh7th/nvim-cmp",
-    -- 	},
-    -- 	config = function()
-    -- 		require("codeium").setup({})
-    -- 	end,
+    --  "Exafunction/codeium.nvim",
+    --  dependencies = {
+    --      "nvim-lua/plenary.nvim",
+    --      "hrsh7th/nvim-cmp",
+    --  },
+    --  config = function()
+    --      require("codeium").setup({})
+    --  end,
     -- },
     --
     -- {
-    -- 	"Exafunction/codeium.vim",
-    -- 	event = "BufEnter",
-    -- 	config = function()
-    -- 		-- Add keybindings for Codeium functions here
-    -- 		vim.keymap.set("i", "<C-g>", function()
-    -- 			return vim.fn["codeium#Accept"]()
-    -- 		end, { expr = true, silent = true })
-    -- 		vim.keymap.set("i", "<C-c>", function()
-    -- 			return vim.fn["codeium#CycleCompletions"](1)
-    -- 		end, { expr = true, silent = true })
-    -- 		vim.keymap.set("i", "<C-v>", function()
-    -- 			return vim.fn["codeium#CycleCompletions"](-1)
-    -- 		end, { expr = true, silent = true })
-    -- 		vim.keymap.set("i", "<C-x>", function()
-    -- 			return vim.fn["codeium#Clear"]()
-    -- 		end, { expr = true, silent = true })
-    -- 	end,
+    --  "Exafunction/codeium.vim",
+    --  event = "BufEnter",
+    --  config = function()
+    --      -- Add keybindings for Codeium functions here
+    --      vim.keymap.set("i", "<C-g>", function()
+    --          return vim.fn["codeium#Accept"]()
+    --      end, { expr = true, silent = true })
+    --      vim.keymap.set("i", "<C-c>", function()
+    --          return vim.fn["codeium#CycleCompletions"](1)
+    --      end, { expr = true, silent = true })
+    --      vim.keymap.set("i", "<C-v>", function()
+    --          return vim.fn["codeium#CycleCompletions"](-1)
+    --      end, { expr = true, silent = true })
+    --      vim.keymap.set("i", "<C-x>", function()
+    --          return vim.fn["codeium#Clear"]()
+    --      end, { expr = true, silent = true })
+    --  end,
     -- },
     -- {
-    -- 	"robitx/gp.nvim",
-    -- 	config = function()
-    -- 		local conf = {
-    -- 			-- For customization, refer to Install > Configuration in the Documentation/Readme
-    -- 		}
-    -- 		require("gp").setup(conf)
+    --  "robitx/gp.nvim",
+    --  config = function()
+    --      local conf = {
+    --          -- For customization, refer to Install > Configuration in the Documentation/Readme
+    --      }
+    --      require("gp").setup(conf)
     --
-    -- 		-- Setup shortcuts here (see Usage > Shortcuts in the Documentation/Readme)
-    -- 	end,
+    --      -- Setup shortcuts here (see Usage > Shortcuts in the Documentation/Readme)
+    --  end,
     -- },
 
     {
@@ -75,11 +75,11 @@ return {
             -- provider = "openai",
             -- providers = { "openai" },
             -- openai = {
-            -- 	model = "gpt-3.5-turbo",
+            --  model = "gpt-3.5-turbo",
             -- model = "gpt-3.5-turbo-0125",
             -- model = "gpt-4-turbo",
-            -- 	temperature = 0.3,
-            -- 	max_tokens = 1000,
+            --  temperature = 0.3,
+            --  max_tokens = 1000,
             -- },
             provider = "claude",
             providers = { "claude" },
