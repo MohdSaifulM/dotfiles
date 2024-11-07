@@ -98,6 +98,7 @@ alias proj='cd ~/projects'
 alias trans='cd ~/work/tradingroom/app-frontend/translations'
 alias lg='lazygit'
 alias mgb='cd "/mnt/c/Program Files/MongoDB/Tools/100/bin"'
+alias cursor='~/development/cursor-0.42.4x86_64.AppImage --no-sandbox'
 
 alias flutter-emu='flutter emulators --launch Pixel_8_Pro_API_35'
 
