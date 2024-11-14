@@ -105,7 +105,7 @@ return {
             "MunifTanjim/nui.nvim",
             --- The below dependencies are optional,
             "nvim-tree/nvim-web-devicons", -- or echasnovski/mini.icons
-            "zbirenbaum/copilot.lua", -- for providers='copilot'
+            "zbirenbaum/copilot.lua",      -- for providers='copilot'
             {
                 -- support for image pasting
                 "HakonHarnes/img-clip.nvim",
@@ -127,9 +127,14 @@ return {
                 -- Make sure to set this up properly if you have lazy=true
                 "MeanderingProgrammer/render-markdown.nvim",
                 opts = {
-                    file_types = { "markdown", "Avante" },
+                    file_types = { "markdown", "Avante", "AvanteInput" },
                 },
-                ft = { "markdown", "Avante" },
+                ft = { "markdown", "Avante", "AvanteInput" },
+                dependencies = { 'nvim-treesitter/nvim-treesitter', 'echasnovski/mini.nvim' }, -- if you use the mini.nvim suite
+                -- dependencies = { 'nvim-treesitter/nvim-treesitter', 'echasnovski/mini.icons' }, -- if you use standalone mini plugins
+                -- dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-tree/nvim-web-devicons' }, -- if you prefer nvim-web-devicons
+                ---@module 'render-markdown'
+                ---@type render.md.UserConfig
             },
         },
     },
