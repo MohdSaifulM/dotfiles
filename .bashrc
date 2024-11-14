@@ -147,3 +147,8 @@ set -o vi
 figlet -c -f 'Poison.flf' "SaifXO" | lolcat
 
 export CHROME_EXECUTABLE=/usr/bin/chromium-browser
+
+# Load environment variables from ~/.env
+if [ -f ~/.env ]; then
+    export $(cat ~/.env | xargs)
+fi
