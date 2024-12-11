@@ -1,6 +1,7 @@
 return {
     { "nvim-tree/nvim-web-devicons" },
     { "ryanoasis/vim-devicons" },
+    { "tpope/vim-surround" },
     {
         "nvim-lualine/lualine.nvim",
         config = function()
