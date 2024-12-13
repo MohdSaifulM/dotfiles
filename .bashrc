@@ -100,6 +100,8 @@ alias lg='lazygit'
 alias mgb='cd "/mnt/c/Program Files/MongoDB/Tools/100/bin"'
 alias cursor='~/development/cursor-0.42.4x86_64.AppImage --no-sandbox'
 
+alias aqua='/usr/local/bin/asciiquarium'
+
 alias flutter-emu='flutter emulators --launch Pixel_8_Pro_API_35'
 
 # Start genesiv work session
@@ -144,7 +146,8 @@ set -o vi
 # . "$HOME/.cargo/env"
 # source /home/saif/alacritty/extra/completions/alacritty.bash
 
-figlet -c -f 'Poison.flf' "SaifXO" | lolcat
+neofetch
+figlet -c -f 'DOS Rebel.flf' "SAIFXO" | lolcat
 
 export CHROME_EXECUTABLE=/usr/bin/chromium-browser
 
