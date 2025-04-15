@@ -21,16 +21,16 @@ return {
             -- OPTIONAL:
             --   `nvim-notify` is only needed, if you want to use the notification view.
             --   If not available, we use `mini` as the fallback
-            "rcarriga/nvim-notify",
+            -- "rcarriga/nvim-notify",
         },
         config = function()
-            require("notify").setup({
-                timeout = 3000,
-                background_colour = "#000000",
-                render = "default",
-                top_down = false,
-                stages = "fade_in_slide_out",
-            })
+            -- require("notify").setup({
+            --     timeout = 3000,
+            --     background_colour = "#000000",
+            --     render = "default",
+            --     top_down = false,
+            --     stages = "fade_in_slide_out",
+            -- })
 
             require("noice").setup({
                 lsp = {

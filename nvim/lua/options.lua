@@ -10,5 +10,3 @@ vim.opt.smartindent = true
 vim.opt.termguicolors = true
 vim.opt.scrolloff = 8
 vim.opt.signcolumn = "yes"
-
-vim.g.colorscheme = 'github_dark_dimmed'

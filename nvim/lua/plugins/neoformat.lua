@@ -3,7 +3,7 @@ return {
 
     config = function()
         -- Configure Neoformat
-        vim.g.neoformat_enabled_python = { 'autopep8', 'yapf', 'docformatter' }
+        vim.g.neoformat_enabled_python = { 'black', 'isort' }
         vim.g.neoformat_enabled_javascript = { 'prettier' }
         vim.g.neoformat_enabled_lua = { 'lua-format' }
         vim.g.neoformat_enabled_java = { 'prettier' }
@@ -27,7 +27,7 @@ return {
         vim.cmd([[
         augroup fmt
         autocmd!
-        autocmd BufWritePre *.js,*.jsx,*.ts,*.tsx,*.css,*.scss,*.md,*.dart Neoformat
+        autocmd BufWritePre *.js,*.jsx,*.ts,*.tsx,*.css,*.scss,*.md,*.dart,*.py Neoformat
         augroup END
         ]])
     end,

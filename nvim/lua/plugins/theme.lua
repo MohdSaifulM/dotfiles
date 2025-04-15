@@ -66,8 +66,8 @@ local themes = {
             -- vim.g.gruvbox_contrast_light = "medium"
             -- vim.g.gruvbox_termcolors = 16
             -- vim.g.gruvbox_italic = 1
-            -- vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
-            -- vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+            vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
+            vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
             -- vim.cmd.colorscheme("gruvbox")
             vim.cmd([[colorscheme gruvbox]])
         end,
@@ -78,7 +78,6 @@ local themes = {
     --     priority = 1000,
     --     config = function()
     --         vim.o.background = "dark"
-    --         vim.cmd([[colorscheme gruvbox]])
     --     end,
     -- },
 
@@ -118,7 +117,46 @@ local themes = {
             -- Set the colorscheme after setup
             vim.cmd('colorscheme github_dark_dimmed')
         end,
+    },
+
+    biscuit = {
+        "Biscuit-Theme/nvim",
+        lazy = false,
+        as = "biscuit",
+        config = function()
+            require('biscuit').setup({
+                transparency = true,
+            })
+            vim.cmd('colorscheme biscuit')
+        end
+    },
+
+    onedarkpro = {
+        "olimorris/onedarkpro.nvim",
+        lazy = false,
+        config = function()
+            require("onedarkpro").setup({
+                theme = "night",
+                transparent = true,
+                styles = {
+                    comments = "italic",
+                    keywords = "bold",
+                    functions = "italic,bold",
+                },
+            })
+            vim.cmd("colorscheme onedark")
+        end,
+    },
+
+    cyberdream = {
+        "scottmckendry/cyberdream.nvim",
+        lazy = false,
+        priority = 1000,
+        config = function()
+            require("cyberdream").setup({ transparent = true })
+            vim.cmd("colorscheme cyberdream")
+        end,
     }
 }
 
-return themes.github;
+return themes.catppuccin
