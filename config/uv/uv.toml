@@ -1,0 +1,6 @@
+[[index]]
+url = "https://artifacts.merck.com/artifactory/api/pypi/pypi-main-dev/simple"
+default = true
+
+[pip]
+index-url = "https://artifacts.merck.com/artifactory/api/pypi/pypi-main-dev/simple"
