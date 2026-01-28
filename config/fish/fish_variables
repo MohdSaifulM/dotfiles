@@ -1,12 +1,5 @@
 # This file contains fish universal variable definitions.
 # VERSION: 3.0
-SETUVAR --export ANTHROPIC_MODEL:us\x2eanthropic\x2eclaude\x2dsonnet\x2d4\x2d20250514\x2dv1\x3a0
-SETUVAR --export AWS_PROFILE:cline
-SETUVAR --export AWS_REGION:us\x2deast\x2d1
-SETUVAR --export CLAUDE_CODE_USE_BEDROCK:1
-SETUVAR --export NODE_EXTRA_CA_CERTS:/opt/homebrew/etc/ca\x2dcertificates/cert\x2epem
 SETUVAR --export --path PATH:/opt/homebrew/opt/postgresql\x4015/bin\x1e/opt/homebrew/opt/postgresql\x4015/bin\x1e/opt/homebrew/Caskroom/miniforge/base/bin\x1e/usr/local/bin\x1e/System/Cryptexes/App/usr/bin\x1e/usr/bin\x1e/bin\x1e/usr/sbin\x1e/sbin\x1e/var/run/com\x2eapple\x2esecurity\x2ecryptexd/codex\x2esystem/bootstrap/usr/local/bin\x1e/var/run/com\x2eapple\x2esecurity\x2ecryptexd/codex\x2esystem/bootstrap/usr/bin\x1e/var/run/com\x2eapple\x2esecurity\x2ecryptexd/codex\x2esystem/bootstrap/usr/appleinternal/bin\x1e/Applications/Ghostty\x2eapp/Contents/MacOS
-SETUVAR --export REQUESTS_CA_BUNDLE:/Users/saifm/all_certs\x2epem
-SETUVAR --export SSL_CERT_FILE:/Users/saifm/all_certs\x2epem
 SETUVAR --export UV_NATIVE_TLS:true
 SETUVAR __fish_initialized:4300

@@ -1,3 +1,6 @@
+# Zsh completions (must be before anything that uses compdef)
+autoload -Uz compinit
+compinit
 # oh-my-posh config
 eval "$(oh-my-posh init zsh --config $(brew --prefix oh-my-posh)/themes/tokyonight_storm.omp.json)"
 
@@ -35,6 +38,3 @@ unset __conda_setup
 
 eval "$(uv generate-shell-completion zsh)"
 eval "$(uvx --generate-shell-completion zsh)"
-
-. "$HOME/.local/bin/env"
-export UV_NATIVE_TLS=true
