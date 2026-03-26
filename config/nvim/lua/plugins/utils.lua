@@ -10,15 +10,6 @@ return {
         "mg979/vim-visual-multi",
         branch = "master",
     },
-    -- {
-    --     "Pocco81/auto-save.nvim",
-    --     config = function()
-    --         require("auto-save").setup({
-    -- your config goes here
-    -- or just leave it empty :)
-    --         })
-    --     end,
-    -- },
     {
         "numToStr/Comment.nvim",
         config = function()
@@ -27,12 +18,6 @@ return {
                     return vim.bo.commentstring
                 end,
             })
-        end,
-    },
-    {
-        "JoosepAlviste/nvim-ts-context-commentstring",
-        config = function()
-            vim.g.skip_ts_context_commentstring_module = true
         end,
     },
     {
@@ -86,30 +71,14 @@ return {
             vim.g.startuptime_tries = 10
         end,
     },
-    -- {
-    --   "m4xshen/hardtime.nvim",
-    --   dependencies = { "MunifTanjim/nui.nvim", "nvim-lua/plenary.nvim" },
-    --   event = "VeryLazy",
-    --   opts = {},
-    -- },
-    -- {
-    --   "tris203/precognition.nvim",
-    --   event = "VeryLazy",
-    --   config = {},
-    -- },
-    -- {
-    --     'edluffy/hologram.nvim',
-    --     config = function()
-    --         require('hologram').setup({
-    --             auto_disable = true,
-    --         })
-    --     end,
-    -- }
-
     {
         "luckasRanarison/tailwind-tools.nvim",
-        dependencies = { "nvim-treesitter/nvim-treesitter" },
-        opts = {}, -- your configuration
+        dependencies = {
+            "nvim-treesitter/nvim-treesitter",
+            "neovim/nvim-lspconfig",
+        },
+        ft = { "html", "css", "javascript", "javascriptreact", "typescript", "typescriptreact" },
+        opts = {},
     },
     {
         "iamcco/markdown-preview.nvim",
@@ -147,5 +116,27 @@ return {
         "gregorias/coerce.nvim",
         tag = 'v4.1.0',
         config = true,
+    },
+    {
+      "hat0uma/csvview.nvim",
+      ---@module "csvview"
+      ---@type CsvView.Options
+      opts = {
+        parser = { comments = { "#", "//" } },
+        keymaps = {
+          -- Text objects for selecting fields
+          textobject_field_inner = { "if", mode = { "o", "x" } },
+          textobject_field_outer = { "af", mode = { "o", "x" } },
+          -- Excel-like navigation:
+          -- Use <Tab> and <S-Tab> to move horizontally between fields.
+          -- Use <Enter> and <S-Enter> to move vertically between rows and place the cursor at the end of the field.
+          -- Note: In terminals, you may need to enable CSI-u mode to use <S-Tab> and <S-Enter>.
+          jump_next_field_end = { "<Tab>", mode = { "n", "v" } },
+          jump_prev_field_end = { "<S-Tab>", mode = { "n", "v" } },
+          jump_next_row = { "<Enter>", mode = { "n", "v" } },
+          jump_prev_row = { "<S-Enter>", mode = { "n", "v" } },
+        },
+      },
+      cmd = { "CsvViewEnable", "CsvViewDisable", "CsvViewToggle" },
     }
 }

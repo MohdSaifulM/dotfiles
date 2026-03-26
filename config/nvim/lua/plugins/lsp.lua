@@ -22,13 +22,6 @@ return {
 		lazy = false,
 		config = true,
 	},
-	{
-		"luckasRanarison/tailwind-tools.nvim",
-		event = "BufRead",
-		ft = { "javascript", "javascriptreact", "typescript", "typescriptreact", "html", "css" },
-		dependencies = { "nvim-treesitter/nvim-treesitter" },
-		opts = {},
-	},
 
 	-- LSP
 	{
@@ -225,28 +218,28 @@ return {
 							end,
 						})
 					end,
-                    require("lspconfig").pylsp.setup({
-                        filetypes = { "python" },
-                        settings = {
-                            formatCommand = {"black"}, -- Use black for formatting
-                            pylsp = {
-                                plugins = {
-                                    -- pycodestyle = {
-                                    --     enabled = true, -- Ensure pycodestyle is enabled
-                                    --     -- ignore = { "E501", "E302", "E226" }, -- Ignore "line too long" warning
-                                        -- maxLineLength = 88, -- Set custom max line length
-                                    -- },
-                                    pylint = { enabled = false }, -- Enable pylint for additional linting
-                                    pyflakes = { enabled = true }, -- Enable pyflakes for error checking
-                                    mccabe = { enabled = true, threshold = 10 }, -- Enable mccabe for complexity analysis
-                                },
-                            },
-                        },
-                        on_attach = function(client, bufnr)
-                            -- Add custom keybindings or other settings here
-                            print("Python LSP attached to buffer", bufnr)
-                        end,
-                    })
+					pylsp = function()
+						require("lspconfig").pylsp.setup({
+							filetypes = { "python" },
+							settings = {
+								formatCommand = {"black"},
+								pylsp = {
+									plugins = {
+										pylint = { enabled = false },
+										pyflakes = { enabled = true },
+										mccabe = { enabled = true, threshold = 10 },
+                                        pycodestyle = {
+                                            maxLineLength = 150,
+                                            ignore = { "E501" }, -- Ignore line length warnings
+                                        },
+									},
+								},
+							},
+							on_attach = function(client, bufnr)
+								print("Python LSP attached to buffer", bufnr)
+							end,
+						})
+					end,
 				},
 			})
 		end,

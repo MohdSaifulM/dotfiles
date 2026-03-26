@@ -2,10 +2,6 @@ return {
     {
         'nvim-treesitter/nvim-treesitter',
         build = ':TSUpdate',
-        dependencies = {
-            -- 'nvim-treesitter/nvim-treesitter-context',
-            'nvim-treesitter/playground',
-        },
         config = function()
             require("nvim-treesitter.configs").setup({
                 auto_install = true,

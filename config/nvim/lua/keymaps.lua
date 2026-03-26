@@ -39,3 +39,13 @@ end)
 vim.keymap.set({ "n", "v" }, "<leader>ap", "<cmd>CodeCompanionActions<cr>", { noremap = true, silent = true })
 vim.keymap.set({ "n", "v" }, "<leader>aa", "<cmd>CodeCompanionChat Toggle<cr>", { noremap = true, silent = true })
 vim.keymap.set("v", "ga", "<cmd>CodeCompanionChat Add<cr>", { noremap = true, silent = true })
+
+-- Grep search with prompt (replaces telescope <leader>ps)
+vim.keymap.set("n", "<leader>ps", function()
+    local search_query = vim.fn.input("Grep > ")
+    if search_query == "" then
+        print("Empty search string provided.")
+        return
+    end
+    Snacks.picker.grep({ search = search_query })
+end)
